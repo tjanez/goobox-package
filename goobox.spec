@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(libdiscid)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	itstool
+BuildRequires:	intltool
 BuildRequires:	desktop-file-utils
 # optional BuildRequires
 BuildRequires:	pkgconfig(libnotify)
