@@ -26,7 +26,17 @@ BuildRequires:	pkgconfig(libnotify)
 # packaged in Fedora yet (2014-03-11).
 #BuildRequires:	pkgconfig(libcoverart)
 
-# TODO: Add Requires on ??? when rpm gains support for Suggests/...
+# mandatory GStreamer plugins (cdparanoiasrc, audioconvert, volume, giosink)
+# and OGG Vorbis encoder are currently all part of gstreamer1-plugins-base
+Requires:	gstreamer1-plugins-base
+# Flac and Wave encoders are currently part of gstreamer-plugins-good
+Requires:	gstreamer1-plugins-good
+# MP3 encoder is currently part of gstreamer1-plugins-ugly, which is
+# available after enabling Third party repositories:
+# https://fedoraproject.org/wiki/Third_party_repositories
+# NOTE: When rpm gains support for weak dependencies, the following
+# Recommends statement will be uncommented
+#Recommends:	gstreamer1-plugins-ugly
 
 
 %description
@@ -86,6 +96,6 @@ fi
 
 
 %changelog
-* Tue Mar 18 2014 Tadej Janež <tadej.janez@tadej.hicsalta.si> 3.2.1-0.1
+* Sat Mar 22 2014 Tadej Janež <tadej.janez@tadej.hicsalta.si> 3.2.1-0.1
 - Initial package.
 
