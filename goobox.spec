@@ -1,3 +1,5 @@
+%global url_ver	%%(echo %{version} | cut -d . -f 1,2)
+
 Name:		goobox
 Version:	3.2.1
 Release:	0.1%{?dist}
@@ -5,7 +7,7 @@ Summary:	A Compact Disk Player and Ripper for GNOME
 
 License:	GPLv2+
 URL:		https://people.gnome.org/~paobac/goobox/
-Source0:	http://ftp.gnome.org/pub/gnome/sources/goobox/3.2/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/gnome/sources/goobox/%{url_ver}/%{name}-%{version}.tar.xz
 
 # mandatory BuildRequires
 BuildRequires:	pkgconfig(glib-2.0)
@@ -23,7 +25,7 @@ BuildRequires:	desktop-file-utils
 # optional BuildRequires
 BuildRequires:	pkgconfig(libnotify)
 # NOTE: The libcoverart dependency is commented out since libcoverart is not
-# packaged in Fedora yet (2014-03-11).
+# packaged in Fedora yet (2014-03-31).
 #BuildRequires:	pkgconfig(libcoverart)
 
 # mandatory GStreamer plugins (cdparanoiasrc, audioconvert, volume, giosink)
@@ -96,6 +98,6 @@ fi
 
 
 %changelog
-* Sat Mar 22 2014 Tadej Janež <tadej.janez@tadej.hicsalta.si> 3.2.1-0.1
+* Mon Mar 31 2014 Tadej Janež <tadej.janez@tadej.hicsalta.si> 3.2.1-0.1
 - Initial package.
 
